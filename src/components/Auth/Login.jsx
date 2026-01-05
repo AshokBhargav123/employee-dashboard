@@ -22,12 +22,19 @@ const Login = () => {
     <div className="login-card">
       <h2>Employee Dashboard</h2>
 
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={e => setPassword(e.target.value)}
-      />
+    <div className="login-inputs">
+      <p>Email: </p>
+    <input
+      placeholder="Email"
+      onChange={e => setEmail(e.target.value)}
+    />
+<p>Password: </p>
+    <input
+      type="password"
+      placeholder="Password"
+      onChange={e => setPassword(e.target.value)}
+    />
+  </div>
 
       <button className="primary" onClick={handleLogin}>
         Login

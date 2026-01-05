@@ -14,4 +14,11 @@
 
 .login-card input {
   margin-bottom: 15px;
+  
+}
+
+.login-inputs {
+  display: flex;
+ 
+   flex-direction: column;
 }
