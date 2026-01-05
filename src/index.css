@@ -1,0 +1,260 @@
+/* =========================
+   CSS VARIABLES (PALETTE)
+========================= */
+:root {
+  --bg-main: #f4f7fb;
+  --bg-soft: #eef2f7;
+  --bg-card: #ffffff;
+
+  --primary: #2563eb;
+  --primary-soft: #e0e7ff;
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+
+  --border: #e5e7eb;
+
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   GLOBAL BACKGROUND
+========================= */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, var(--primary-soft), transparent 45%),
+    radial-gradient(circle at bottom right, #dbeafe, transparent 45%),
+    linear-gradient(180deg, var(--bg-main), var(--bg-soft));
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+.dashboard-header {
+  background: linear-gradient(135deg, #ffffff, #f5f7ff);
+  padding: 20px 26px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--primary);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   CARD BASE (REUSABLE)
+========================= */
+.card,
+.employee-form,
+.filters,
+.summary-card,
+.table-container {
+  background: linear-gradient(180deg, var(--bg-card), #f9fafb);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+.summary-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::after {
+  content: "";
+  position: absolute;
+  top: -35%;
+  right: -35%;
+  width: 140px;
+  height: 140px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 50%;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--primary), #3b82f6);
+  color: #ffffff;
+}
+
+button.primary:hover {
+  background: linear-gradient(135deg, #1e40af, var(--primary));
+}
+
+button.secondary {
+  background: #64748b;
+  color: #ffffff;
+}
+
+button.secondary:hover {
+  background: #475569;
+}
+
+button.danger {
+  background: linear-gradient(135deg, var(--danger), #ef4444);
+  color: #ffffff;
+}
+
+button.danger:hover {
+  background: linear-gradient(135deg, #b91c1c, var(--danger));
+}
+
+/* =========================
+   INPUTS & SELECTS
+========================= */
+input,
+select {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  width: 100%;
+  background-color: #ffffff;
+  color: var(--text-main);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(135deg, #f1f5f9, #e5e7eb);
+}
+
+th {
+  padding: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #374151;
+}
+
+td {
+  padding: 15px;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+.status {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status.inactive {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* =========================
+   IMAGE PREVIEW
+========================= */
+.preview {
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   PRINT MODE
+========================= */
+@media print {
+  body {
+    background: white !important;
+  }
+
+  button,
+  input,
+  select {
+    display: none !important;
+  }
+}
