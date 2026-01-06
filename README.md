@@ -34,3 +34,5 @@ It includes authentication, employee CRUD operations, image upload with preview,
 1. Clone the repository
 ```bash
 git clone https://github.com/AshokBhargav123/employee-dashboard.git
+2.Install the node modules 
+3. Run the project
